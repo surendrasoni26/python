@@ -7,6 +7,7 @@ for i in list:
     print (i)
 
 print ("============")
+print("====")
 print (list[2])
 
 list1=list.append("five")
