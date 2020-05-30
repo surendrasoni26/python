@@ -12,20 +12,40 @@ class Excercise_Oops:
             product.append(name)
         return product
 
-    def getCategoryName(self, CategoryName):
+    def getCategoryName(self, *args):
         print("Inside getCategoryName...!!")
         category={}
-        category["Electronics"]=self.getProductName("Electronics")
+        for CategoryName in args:
+            #to get prodcut for each category
+            category[CategoryName]=self.getProductName(CategoryName)
         return category
 
     def getEommSiteName(self, *args):
         print("Inside getEommSiteName")
         sites={}
-        sites["Myntra"]=self.getCategoryName("Myntra")
+        #sites["Myntra"]=self.getCategoryName("Myntra")
+        for site in args:
+            #print(site)
+            #sites[site]=self.getCategoryName(site)
+            sites[site]=self.getCategoryName("Electronics", "Books", "Automobile")
+
         return sites
 
 
 if __name__ == "__main__":
     a=Excercise_Oops()
-    data=a.getEommSiteName("Myntra")
-    print (data)
+    data=a.getEommSiteName("Myntra", "Flipkart", "Jobong")
+    #Excercise_Oops.printData(data)
+    #print (data)
+    #@staticmethod
+    #def printData(data):
+    
+    for i in data:
+        aa = data[i]
+        #print (aa)
+        for item in aa:
+            #print (type(aa[item]))
+            bb = aa[item]
+            #print (bb)
+            for prodcut in bb:
+                print (i + "--- " + item + "-" + "-"+prodcut)
