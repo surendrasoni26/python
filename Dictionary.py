@@ -11,5 +11,14 @@ world = {"IND":
 
         }
     }
-for countryName in world:
+for countryName, state in world.items():
     print(countryName)
+    print(state)
+    print ("############")
+    for st, players in state.items():
+        print(st+"\'s player is "+players[0])
+        print("################")
+        print(st+"\'s player are ")
+        for pt in players:
+            print(pt)
+#        print(players[0])
